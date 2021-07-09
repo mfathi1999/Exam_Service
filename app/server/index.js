@@ -9,9 +9,8 @@ io.use((socket,next)=>{
     const username = socket.handshake.auth.username;
     const password = socket.handshake.auth.password;
     
-    if (username == "Mohammad" && password == "1234"){
-        return next(new Error("valid UserPass"));
-    }
+    console.log(username + password);
+    // MongoAuth(username , password);
     next();
 });
 

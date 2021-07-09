@@ -31,10 +31,8 @@ export default {
   },
   methods :{
     OnUserPassSelection(username , password){
-      //alert("username: "+username+" and password: "+password);
-      socket.auth = 
-                    {username ,
-                    password};
+            
+      socket.auth =  {username , password};
       socket.connect();
       // this.validation = true;
     }
@@ -42,7 +40,7 @@ export default {
   created(){
     socket.on("connect_error" , (err)=>{
       if (err === "valid UserPass"){
-        alert("valid UserPass");
+        alert(err);
       }
     });
   }
